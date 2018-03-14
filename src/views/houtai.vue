@@ -6,7 +6,7 @@
     </el-header>
     <el-container>
 
-      <el-aside width="210px">
+      <el-aside>
 
         <left></left>
 
@@ -53,11 +53,13 @@
         height :70px
 
     .el-aside
+      width:5%
       background-color: #7A9EB1
       color: #333
       text-align: center
 
     .el-main
+      width:95%
       background-color: #E9EEF3
       color: #333
       text-align: center
