@@ -1,8 +1,9 @@
 <template>
 
   <el-container>
-    <el-header  height="100px">
+    <el-header height="100px">
       <img class="img" src="./../assets/image/touxiang.jpg"></img>
+      <el-button @click="back" class="btn" type="primary" plain>注销</el-button>
     </el-header>
     <el-container>
 
@@ -31,6 +32,17 @@
         msg: 'Hello blog'
       }
     },
+    methods: {
+      back() {
+        sessionStorage.removeItem("login");
+        this.$router.push('/login');
+      }
+    },
+    created() {
+      if (sessionStorage.login != "true") {
+        this.$router.push('/login');
+      }
+    },
 
     components: {
       Left
@@ -46,26 +58,30 @@
     .el-header
       background-color: #415865
       .img
-        float :left
-        margin:13px 0 0 40px
+        float: left
+        margin: 11px 0 0 70px
         border-radius: 50%
-        width :70px
-        height :70px
+        width: 70px
+        height: 70px
+      .btn
+        float: right
+        height :30px
+        margin-top :27px
+        padding-bottom :20px
 
     .el-aside
-      width:5%
+      width: 5%
       background-color: #7A9EB1
       color: #333
       text-align: center
 
     .el-main
-      width:95%
+      width: 95%
       background-color: #E9EEF3
       color: #333
       text-align: center
       line-height: 100px
       overflow-x: hidden
-
 
 
 </style>

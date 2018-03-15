@@ -1,15 +1,3 @@
-<!--<template>-->
-  <!--<div class="login">-->
-    <!--<h2 class="title">My Blog</h2>-->
-    <!--<form class="form">-->
-      <!--<span>用户：</span><input v-model="loginForm.username" type="text" name="username"/><br>-->
-      <!--<span>密码：</span><input v-model="loginForm.password" type="password" name="password"/><br>-->
-
-      <!--&lt;!&ndash;<button @click.prevent="submit()">GO，去后台</button>&ndash;&gt;-->
-      <!--<div class="submit" ><a class="submit_a" href="javascript:;" @click="submit">登录</a></div>-->
-    <!--</form>-->
-  <!--</div>-->
-<!--</template>-->
 <template>
   <div class="login-wrap">
     <div class="ms-title">后台管理系统</div>
@@ -52,6 +40,7 @@
             if (res.data.code === 200) {
               alert(res.data.msg);
               that.$router.push('/admin');
+              sessionStorage.login=true;
             } else {
               alert(res.data.msg);
             }

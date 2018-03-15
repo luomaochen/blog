@@ -1,18 +1,16 @@
 <template>
   <div class="table">
     <el-table :data="datas" align="left" border max-height="800" style="width: 100%">
-      <el-table-column prop="ID" label="ID" width="80"></el-table-column>
-      <el-table-column prop="time" label="时间" width="100"></el-table-column>
-      <el-table-column prop="title" label="标题" width="390" ></el-table-column>
-      <el-table-column prop="category" label="分类" width="100"></el-table-column>
-      <el-table-column prop="description" label="简介" width="700"></el-table-column>
-      <el-table-column label="操作" width="200">
+      <el-table-column prop="ID" label="ID" ></el-table-column>
+      <el-table-column prop="time" label="时间" ></el-table-column>
+      <el-table-column prop="title" label="标题"  ></el-table-column>
+      <el-table-column prop="category" label="分类" ></el-table-column>
+      <el-table-column label="操作" >
         <template slot-scope="scope">
           <el-button size="mini" @click="edit(scope.row)">编辑</el-button>
           <el-button size="mini" @click="open(scope.row)" type="danger">删除</el-button>
         </template>
       </el-table-column>
-      <el-table-column type="selection" width="75"></el-table-column>
     </el-table>
     <div class="edit">
       <el-dialog width="80%" height="100%" title="内容编辑" :visible.sync="dialogFormVisible">
