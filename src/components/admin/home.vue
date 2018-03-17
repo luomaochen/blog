@@ -2,7 +2,7 @@
 
   <el-container>
     <el-header height="100px">
-      <img class="img" src="./../assets/image/touxiang.jpg"></img>
+      <img class="img" src="../../assets/image/touxiang.jpg"></img>
       <el-button @click="back" class="btn" type="primary" plain>注销</el-button>
     </el-header>
     <el-container>
@@ -24,7 +24,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import Left from '@/components/admin/leftbanner.vue'
+  import Left from '@/components/admin/adminleft.vue'
 
   export default{
     data() {

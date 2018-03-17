@@ -9,7 +9,7 @@
     </a>
     <div class="message-container">
       <div class="img-wrapper">
-        <img class="my-img" src="./../assets/image/touxiang.jpg"></img>
+        <img class="my-img" src="../../assets/image/touxiang.jpg"></img>
       </div>
       <span class="my-motto">得之坦然，失之淡然，顺其自然，争其必然</span>
       <hr class="my-line">
@@ -74,7 +74,7 @@
     width: 28%
     height: 100%
     background-color: #537791
-    background-image :url('./../assets/image/background.jpg')
+    background-image :url('../../assets/image/background.jpg')
     background-size:1280px 100%
     background-repeat:no-repeat
     .github-corner:hover .octo-arm

@@ -23,7 +23,7 @@
 
 <script type="text/ecmascript-6">
   import axios from "axios";
-  import Left from '@/components/blogleft.vue'
+  import Left from '@/components/blog/blogleft.vue'
   import {mavonEditor} from 'mavon-editor'
   import 'mavon-editor/dist/css/index.css'
 
@@ -37,7 +37,7 @@
     },
     methods: {
       goback() {
-        this.$router.push('/blog');
+        this.$router.push('/');
       }
     },
     created() {
@@ -133,5 +133,5 @@
 
 </style>
 <style lang="css" type="text/css">
-  @import "../assets/css/markdown.css";
+  @import "../../assets/css/markdown.css";
 </style>

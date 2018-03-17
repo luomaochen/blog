@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Blog from '@/views/blog.vue'
+import Blog from '@/components/blog/blog.vue'
 
 
 
-import Login from '@/views/login.vue'
-import Content from '@/views/content.vue'
+import Login from '@/components/login.vue'
+import Content from '@/components/blog/content.vue'
 
-import Admin from '@/views/houtai.vue'
+import Admin from '@/components/admin/home.vue'
 import Article from '@/components/admin/article.vue'
 import Manage from '@/components/admin/manage.vue'
 
@@ -21,11 +21,6 @@ export default new Router({
       path:'/',
       component: Blog,
       name:'Blog'
-    },
-    {
-      path: '/blog',
-      name: 'Blog',
-      component: Blog
     },
     {
       path:'/login',

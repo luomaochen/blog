@@ -43,7 +43,7 @@
 
 <script type="text/ecmascript-6">
   import axios from "axios";
-  import Left from '@/components/blogleft.vue'
+  import Left from '@/components/blog/blogleft.vue'
   import Velocity from 'velocity-animate'
   import 'velocity-animate/velocity.ui.js'
 
@@ -137,7 +137,7 @@
 
   .list-container:hover
     cursor: pointer
-    width: 82%!important
+    width: 81%!important
     .list-title
       &:after
         opacity: 0!important
@@ -188,7 +188,6 @@
           box-shadow: 4px 4px 18px rgba(77, 54, 100, 0.46)
           -webkit-box-shadow: 4px 4px 18px rgba(77, 54, 100, 0.46)
           width: 80%
-          height: 55%
 
           .list-wrapper
             width: 90%
