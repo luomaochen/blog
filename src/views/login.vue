@@ -60,6 +60,7 @@
     position: relative
     width:100%
     height:100%
+    background-color :#539092
   .ms-title
     position: absolute
     top:50%

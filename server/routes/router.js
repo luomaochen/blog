@@ -15,22 +15,11 @@ module.exports=function (){
   db.connect();
 
 
-  // let jsonWrite = function(res, data) {
-  //   if(typeof data === 'undefined') {
-  //     res.json({
-  //       code: '1',
-  //       msg: '操作失败'
-  //     });
-  //   } else {
-  //     res.json(data);
-  //   }
-  // };
 
   router.post('/login', (req, res) => {
     let username=req.body.username;
     let password=req.body.password;
 
-    console.log(username);
 
       db.query(`SELECT * FROM admin_table WHERE username='${username}' `,(err,data) => {
 
@@ -38,7 +27,7 @@ module.exports=function (){
         console.log(err);
       }else{
         if(data.length==0){                            //此判断处理如果用户名不一样 返回的数据长度为0 则不继续 否则下面调用data[0]会报错
-              console.log(username+'2');
+
               res.json({code: 400, msg: '用户名不存在'});
             }else{
                 if (data[0].password == password) {
@@ -78,19 +67,6 @@ module.exports=function (){
     category1=mysql.escape(category);
 
 
-    // let reg1=/([^\\])'/g;
-    // let reg2="$1''";
-    // console.log(content);
-    // content=content.replace(reg1,reg2);
-    // content2=content1.join("''");
-    // title1=title.split("'").join("\\'");
-    // description1=description.split("'").join("\\'");
-    // category1=category.split("'").join("\\'");
-    // console.log(content1);
-    // console.log(edit1);
-    console.log(time);
-    // console.log(content2);
-    // console.log(title1);
 
     if(req.body.mod_id){   //修改
         db.query(`UPDATE article_table SET title=${title1}, \
@@ -167,8 +143,7 @@ module.exports=function (){
   router.post('/article-table-handle',(req,res) => {      //编辑  删除
     let act = req.body.act;
     let id = req.body.id;
-    console.log(act);
-    console.log(id);
+
     switch (act) {
       case 'mod':
         db.query(`SELECT * FROM article_table WHERE ID=${id}`,(err,data) => {
@@ -199,7 +174,6 @@ module.exports=function (){
             res.json({code: 400, msg: '失败'});
           } else {
             res.json({code: 200, msg: '删除成功',data:data[0]});
-            console.log(data[0]);
           }
         });
         break;

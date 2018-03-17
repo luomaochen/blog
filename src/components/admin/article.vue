@@ -85,11 +85,10 @@
       },
       $save() {
         this.SubmitForm.content = this.$refs.html.d_render;
-        console.log(this.value1);
+
       },
       changeTime(time) {
-        console.log("222");
-        console.log(time);
+
         this.value1 = time;
       },
       submitart() {

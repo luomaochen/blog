@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Blog from '@/views/blog.vue'
-// import Left from '@/components/blogleft.vue'
-import Right from '@/components/blogright.vue'
 
 
 
@@ -20,14 +18,14 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path:'/',
+      component: Blog,
+      name:'Blog'
+    },
+    {
       path: '/blog',
       name: 'Blog',
       component: Blog
-    },
-    {
-      path: '/right',
-      name: 'right',
-      component: Right
     },
     {
       path:'/login',

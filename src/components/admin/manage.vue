@@ -85,7 +85,7 @@
           .then(function (res) {
             that.datas = res.data.data;
             let leng = res.data.data.length;
-            console.log(that.datas);
+
           })
           .catch(function (error) {
             console.log(error);
@@ -95,7 +95,7 @@
       handleDelete(row) {          //删除函数
         const that = this;
         axios.post('/api/article-table-handle', {id: row.ID, act: 'del'}).then(function (res) {
-          console.log(res.data.code);
+
           if (res.data.code == 200) {
             that.$message.success('删除成功');
             that.getdata();         //重新获取数据刷新表格
@@ -156,7 +156,7 @@
 
       handleCurrentChange(val) {           //分页重新获得数据
         this.cur_page = val;
-        console.log(this.cur_page);
+
         const that = this;
         axios.post('/api/article-table', {page: that.cur_page})           //重新获取数据刷新表格
           .then(function (res) {
@@ -174,7 +174,7 @@
       axios.get('/api/article-count')           //重新获取数据刷新表格
         .then(function (res) {
           that.count = (res.data.data.count)/4*10;
-          console.log(that.count);
+
         })
         .catch(function (error) {
           console.log(error);

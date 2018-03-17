@@ -1,20 +1,21 @@
 <template>
   <div class="content-container">
     <div class="content-left">
-      <left></left>
+      <left class="phone-left"></left>
     </div>
     <div class="content-right">
       <div class="content-right-title">
-        <h2>{{datas.title}}</h2>
+        {{datas.title}}
       </div>
       <div class="content-right-meta">
         <time class="meta-time">{{datas.time}}</time>
-        <span class="meta-category">node.js</span>
+        <span class="meta-category">{{datas.category}}</span>
       </div>
       <div class="content-right-mark">
         <div class="markdown-body" v-html="datas.content"></div>
-        <!--<mavon-editor default_open="preview" :toolbarsFlag="false" :subfield="false"  -->
-        <!--style="width:100% ;height: 100% " class="editor"></mavon-editor>-->
+      </div>
+      <div title="回到主页" class="back-blog" @click="goback">
+          <span   class="icon-home3"></span>
       </div>
     </div>
   </div>
@@ -32,6 +33,11 @@
       return {
         datas: [],
         id: ''
+      }
+    },
+    methods: {
+      goback() {
+        this.$router.push('/blog');
       }
     },
     created() {
@@ -54,17 +60,25 @@
 </script>
 
 <style lang="stylus" type="text/stylus" rel="stylesheet/stylus">
+  .back-blog
+    position: fixed
+    right: 1rem
+    bottom: 2em
+    &:hover
+      cursor: pointer
+    span
+      font-size:35px
+      color:#588D9C
+      &:hover
+        font-size: 38px
+
+
   .content-container
     background-color: white
     width: 100%
     height: 100%
     color: black
     font-size: 20px
-    /*.content-left*/
-      /*position: fixed*/
-      /*width: 28%*/
-      /*height: 100%*/
-      /*background-color: #36626A*/
     .content-right
       margin-left: 28%
       padding-top: 50px
@@ -73,34 +87,50 @@
       background-color: white
       .content-right-title
         margin: 0 auto
-        width: 60%
-        height: 30px
+        width: 80%
         background-color: white
         text-align: center /*文字水平居中对齐*/
         line-height: 30px
+        font-size :1.3rem
       .content-right-meta
         width: 80%
         margin: 20px auto
+        font-size :1rem
       .content-right-mark
         margin: 50px auto
         height: 90%
         width: 80%
 
     @media screen and (max-width: 900px)
+      .content-container
+        height :100%
+        width :100%
+        overflow-y :auto
       .content-left
         position: absolute
         top: 0
         background-color: pink
         width: 100%
         height: 30%
-
       .content-right
         position: absolute
         top: 30%
-        background-color: blue
+        background-color: white
         margin-left: 0
         width: 100%
-        height: 70%
+        height: 45%
+        overflow-y :scroll
+        .back-blog
+          position: fixed
+          right: 0.3rem
+          bottom: 1rem
+        &:hover
+          cursor: pointer
+        span
+          font-size:22px
+          color:#588D9C
+
+
 </style>
 <style lang="css" type="text/css">
   @import "../assets/css/markdown.css";

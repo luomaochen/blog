@@ -25,20 +25,6 @@
   </el-menu>
 
 
-  <!--<div class="left">-->
-  <!--<div class="title">My Blog</div>-->
-  <!--<div class="img_container">-->
-  <!--<img class="img" src="./../../assets/image/touxiang.jpg"></img>-->
-  <!--</div>-->
-  <!--<div class="select">-->
-  <!--<div class="article">-->
-  <!--<router-link class="article_a" to="/admin/article">文章</router-link>-->
-  <!--</div>-->
-  <!--<div class="manage">-->
-  <!--<router-link class="manage_a" to="/admin/manage">管理</router-link>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--</div>-->
 
 </template>
 
@@ -67,40 +53,6 @@
         text-decoration: none
         color :white
         padding :10px
-  /*.left*/
-  /*background-color: #C5F0A4*/
-  /*width :100%*/
-  /*height :100%*/
-  /*.title*/
-  /*margin: auto*/
-  /*width: 200px*/
-  /*height: 100px*/
-  /*padding-top: 100px*/
-  /*font-size: 30px*/
-  /*font-family: FZShuTi*/
-  /*font-weight: bold*/
-  /*color: #226B80*/
-  /*.img_container*/
-  /*margin: 15px auto*/
-  /*width: 150px*/
-  /*height: 150px*/
-  /*.img*/
-  /*border-radius: 50%*/
-  /*width: 100%*/
-  /*height: 100%*/
-  /*.select*/
-  /*margin: 45px auto*/
-  /*.article*/
-  /*margin: 20px auto*/
-  /*font-size: 23px*/
-  /*.article_a*/
-  /*text-decoration: none*/
-  /*color: #226B80*/
-  /*.manage*/
-  /*margin: 50px auto*/
-  /*font-size: 23px*/
-  /*.manage_a*/
-  /*text-decoration: none*/
-  /*color: #226B80*/
+
 
 </style>

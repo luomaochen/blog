@@ -15,14 +15,14 @@
       <hr class="my-line">
       <p class="my-introduce">嗨，我是茂琛<br>一名爱好前端的在校大学生！</p>
       <div class="message-icon">
-        <a @click="open1"><span class="icon1 icon-CN_tencent_wechat" ></span></a>
-        <a><span class="icon2 icon-CN_tencent_QQ"></span></a>
+        <a href="tencent://message/?uin=943284338" target="_blank"><span class="icon2 icon-CN_tencent_QQ"></span></a>
         <a href="https://github.com/luomaochen" target="_blank"><span class="icon3 icon-Popular_GitHub"></span></a>
         <a href="https://www.zhihu.com/people/luo-mao-chen-26/activities" target="_blank"><span class="icon4 icon-CN_zhihu"></span></a>
       </div>
-    </div>
-    <div v-show="wechat" class="shoow1" style="background-color: blue">
-      sdfsdfsdfd
+      <div class="go-admin"  >
+      <span @click="goadmin">站长登录</span>
+      <span >关于我</span>
+      </div>
     </div>
   </div>
 </template>
@@ -39,14 +39,17 @@
       return {
         msg: 'Welcome to Your Vue.js App',
         show: false,
-        wechat:false,
-        dialogFormVisible: false
+
       }
     },
     methods: {
-      open1(){
-        this.wechat=this.wehat;
+      goadmin(){
+        this.$router.push('/login');
       },
+//      magicw(){
+//        this.magic=true;
+//        this.$emit("listenToChildEvent",this.magic);   //向父组件传值
+//      },
       run() {
         Velocity(document.getElementById('test'), "fadeIn", { duration: 1500 });
       }
@@ -56,12 +59,21 @@
 
 
 <style lang="stylus" type="text/stylus" rel="stylesheet/stylus">
-
+  /*.my-self-first*/
+    /*position: fixed*/
+    /*z-index :5000*/
+    /*width: 100%*/
+    /*height: 100%*/
+    /*background-color: #537791*/
+    /*background-image :url('./../assets/image/background.jpg')*/
+    /*background-size:100%*/
+    /*background-repeat:no-repeat*/
   .my-self
     position: fixed
+    z-index :5000
     width: 28%
     height: 100%
-    background-color: #36626A
+    background-color: #537791
     background-image :url('./../assets/image/background.jpg')
     background-size:1280px 100%
     background-repeat:no-repeat
@@ -81,12 +93,14 @@
         width: 110px
         margin: 0 auto
         .my-img
-          margin: 270px 0 auto
+          margin: 228px 0 auto
           border-radius: 50%
           border: 2px solid #58DADA
           box-shadow: 0 0 18px rgba(88, 218, 218, 0.8)
           width: 110px
           height: 110px
+          &:hover
+            cursor :pointer
       .my-motto
         margin: 33px  auto
         display: block
@@ -116,10 +130,24 @@
             color:#00c251
           .icon2
             color:#dfdfe0
+            &:hover
+              color :#0088fa
           .icon3
             color:black
           .icon4
             color:#0088fa
+
+      .go-admin
+        margin :30px 0 auto
+        width :100%
+        text-align :center
+        font-size :15px
+        color:#dfdfe0
+        &:hover
+          cursor: pointer
+        span:first-child
+          margin-right :20px
+
     @media screen and (max-width: 900px)
     .my-self
       position:relative
@@ -134,24 +162,24 @@
           width: 70px
           margin: 0 auto
           .my-img
-            margin: 1.5em 0 auto
+            margin: 1.2rem 0 auto
             border-radius: 50%
             border: 2px solid #58DADA
             box-shadow: 0 0 18px rgba(88, 218, 218, 0.8)
             width: 70px
             height: 70px
         .my-motto
-            margin: 1.8em auto
+            margin: 1.5rem auto
             display: block
             width: 100%
             text-align: center
-            font-size :14px
+            font-size :1rem
             color: #ECFEFF
         .my-line
-            width: 80%
+            width: 90%
             margin:-0.8em auto
             border-top:1px solid rgba(255, 255, 255, 0.14)
-        .my-introduce,.message-icon
+        .my-introduce,.message-icon,.go-admin
             display :none
 
     @media (max-width: 500px)

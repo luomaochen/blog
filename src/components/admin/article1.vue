@@ -16,17 +16,7 @@
         <mavon-editor v-model="SubmitForm.edit" @change="$change" @save="$save"  ref="html" style="height: 100%"></mavon-editor>
       </div>
 
-      <!--<div class="art-content">-->
-        <!--<span>内容：</span>-->
-        <!--<el-input-->
-          <!--resize="none"-->
-          <!--class="content_input"-->
-          <!--type="textarea"-->
-          <!--:rows="15"-->
-          <!--placeholder="请输入内容"-->
-          <!--v-model="SubmitForm.content">-->
-        <!--</el-input>-->
-      <!--</div>-->
+
       <div class="art-submit">
         <el-button type="success" round @click="open2">提交</el-button>
       </div>
